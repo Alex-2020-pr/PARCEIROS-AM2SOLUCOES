@@ -1,0 +1,524 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AM2 Soluções - Seja um Parceiro Regional</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f4f7fc;
+            color: #1e2b3c;
+            line-height: 1.6;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Header/Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #0a2b4e 0%, #1b4a7a 100%);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 30px;
+            opacity: 0.95;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 15px 30px;
+            background-color: #00b8b0;
+            color: white;
+            text-decoration: none;
+            border-radius: 50px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            transition: background-color 0.3s;
+            border: none;
+            cursor: pointer;
+        }
+
+        .btn:hover {
+            background-color: #00968f;
+        }
+
+        .btn-secondary {
+            background-color: transparent;
+            border: 2px solid white;
+        }
+
+        .btn-secondary:hover {
+            background-color: white;
+            color: #0a2b4e;
+        }
+
+        /* Seções */
+        section {
+            padding: 60px 0;
+            border-bottom: 1px solid #d9e2ef;
+        }
+
+        section:last-child {
+            border-bottom: none;
+        }
+
+        h2 {
+            font-size: 2.2rem;
+            margin-bottom: 40px;
+            text-align: center;
+            color: #0a2b4e;
+        }
+
+        h2 span {
+            color: #00b8b0;
+        }
+
+        /* Grid para cards */
+        .grid-3, .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
+        }
+
+        .card {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 15px;
+            color: #0a2b4e;
+        }
+
+        .card .icone {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+
+        /* Perfil do Parceiro */
+        .perfil-grid {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+        }
+
+        .perfil-item {
+            background: #e6f0fa;
+            padding: 20px 30px;
+            border-radius: 50px;
+            font-weight: bold;
+            color: #0a2b4e;
+        }
+
+        /* Tabela de Ganhos */
+        .tabela-ganhos {
+            width: 100%;
+            border-collapse: collapse;
+            background: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .tabela-ganhos th {
+            background: #0a2b4e;
+            color: white;
+            padding: 15px;
+            text-align: left;
+        }
+
+        .tabela-ganhos td {
+            padding: 15px;
+            border-bottom: 1px solid #d9e2ef;
+        }
+
+        .tabela-ganhos tr:last-child td {
+            border-bottom: none;
+        }
+
+        .destaque {
+            background: #fff9e0;
+            border-left: 4px solid #00b8b0;
+        }
+
+        /* Exemplo Real */
+        .exemplo-card {
+            background: #0a2b4e;
+            color: white;
+            padding: 40px;
+            border-radius: 10px;
+            text-align: center;
+        }
+
+        .exemplo-valor {
+            font-size: 3rem;
+            font-weight: bold;
+            color: #00b8b0;
+            margin: 20px 0;
+        }
+
+        /* Responsabilidades */
+        .responsabilidades {
+            background: #e6f0fa;
+            padding: 40px;
+            border-radius: 10px;
+        }
+
+        .colunas-responsabilidades {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 40px;
+            margin-top: 30px;
+        }
+
+        .responsabilidades ul {
+            list-style: none;
+        }
+
+        .responsabilidades li {
+            margin-bottom: 10px;
+            padding-left: 25px;
+            position: relative;
+        }
+
+        .responsabilidades li::before {
+            content: "✔️";
+            position: absolute;
+            left: 0;
+            color: #00b8b0;
+        }
+
+        /* Formulário */
+        .form-contato {
+            max-width: 600px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        .form-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+            color: #0a2b4e;
+        }
+
+        .form-group input, .form-group select {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #d9e2ef;
+            border-radius: 5px;
+            font-size: 1rem;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e2b3c;
+            color: white;
+            text-align: center;
+            padding: 40px 0;
+        }
+
+        footer a {
+            color: #00b8b0;
+            text-decoration: none;
+        }
+
+        /* Responsividade */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2rem;
+            }
+            
+            .colunas-responsabilidades {
+                grid-template-columns: 1fr;
+                gap: 20px;
+            }
+            
+            h2 {
+                font-size: 1.8rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Hero Section -->
+    <div class="hero">
+        <div class="container">
+            <h1>Seja um Parceiro Regional AM2<br>e gere novas receitas com tecnologia para saúde</h1>
+            <p>Ofereça PACS em Nuvem, Sistema de Laudos e WhatsApp Multiatendimento para seus clientes,<br>sem se preocupar com suporte técnico ou implantação.</p>
+            <a href="#formulario" class="btn">QUERO SER PARCEIRO</a>
+            <a href="#solucoes" class="btn btn-secondary" style="margin-left: 15px;">CONHECER SOLUÇÕES</a>
+        </div>
+    </div>
+
+    <!-- Para quem é -->
+    <section>
+        <div class="container">
+            <h2>Para <span>quem</span> é este programa?</h2>
+            <div class="perfil-grid">
+                <span class="perfil-item">💻 Profissionais de TI</span>
+                <span class="perfil-item">📋 Consultores de Clínicas</span>
+                <span class="perfil-item">🏥 Empresas da Área da Saúde</span>
+                <span class="perfil-item">🤝 Vendedores com Carteira de Clientes</span>
+                <span class="perfil-item">📊 Integradores de Sistemas</span>
+            </div>
+            <p style="text-align: center; margin-top: 30px; font-size: 1.2rem;"><strong>Não precisa ser vendedor profissional</strong> - nós apoiamos em todo o processo!</p>
+        </div>
+    </section>
+
+    <!-- Por que fazer parceria -->
+    <section style="background-color: #e6f0fa;">
+        <div class="container">
+            <h2>Por que <span>fazer parceria</span> com a AM2?</h2>
+            <div class="grid-3">
+                <div class="card">
+                    <div class="icone">💰</div>
+                    <h3>Monetize seu relacionamento</h3>
+                    <p>Transforme seu conhecimento e network em novas fontes de receita com produtos de alto valor.</p>
+                </div>
+                <div class="card">
+                    <div class="icone">🔄</div>
+                    <h3>Receita Recorrente</h3>
+                    <p>Ganhe comissões não apenas na venda, mas também nos primeiros meses de cada cliente.</p>
+                </div>
+                <div class="card">
+                    <div class="icone">🚀</div>
+                    <h3>Sem custo de entrada</h3>
+                    <p>Comece a ganhar sem investir nada. Oferecemos todo o suporte e estrutura necessários.</p>
+                </div>
+                <div class="card">
+                    <div class="icone">🛠️</div>
+                    <h3>Suporte completo</h3>
+                    <p>Implantação, suporte técnico e cobrança são por nossa conta. Você só indica e acompanha.</p>
+                </div>
+                <div class="card">
+                    <div class="icone">📈</div>
+                    <h3>Diferenciais de mercado</h3>
+                    <p>Soluções modernas em nuvem que realmente aumentam a produtividade de clínicas e hospitais.</p>
+                </div>
+                <div class="card">
+                    <div class="icone">🏆</div>
+                    <h3>Certificação e reconhecimento</h3>
+                    <p>Seja um parceiro oficial e destaque-se em sua região com nosso selo de qualidade.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Nossas Soluções -->
+    <section id="solucoes">
+        <div class="container">
+            <h2>Nossas <span>Soluções</span></h2>
+            <div class="grid-3">
+                <div class="card">
+                    <h3>📡 PACS em Nuvem</h3>
+                    <p>Armazenamento e visualização de imagens médicas com segurança e acesso remoto.</p>
+                    <p><strong>Implantação:</strong> R$ 1.500 a R$ 3.000<br><strong>Mensalidade:</strong> R$ 650 a R$ 900</p>
+                </div>
+                <div class="card">
+                    <h3>📝 Sistema de Laudos</h3>
+                    <p>Plataforma completa para laudos médicos e veterinários, com templates e assinatura digital.</p>
+                    <p><strong>Implantação:</strong> R$ 1.500 a R$ 3.000<br><strong>Mensalidade:</strong> R$ 650 a R$ 900</p>
+                </div>
+                <div class="card">
+                    <h3>💬 Multiatendimento WhatsApp</h3>
+                    <p>Solução para agendamentos, atendimento e comunicação automatizada com pacientes.</p>
+                    <p><strong>Implantação média:</strong> R$ 3.000<br><strong>Mensalidade média:</strong> R$ 600</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Modelo de Ganhos -->
+    <section style="background-color: #e6f0fa;">
+        <div class="container">
+            <h2>Como <span>você ganha dinheiro</span></h2>
+            
+            <table class="tabela-ganhos">
+                <tr>
+                    <th>Origem</th>
+                    <th>Comissão</th>
+                    <th>Detalhes</th>
+                </tr>
+                <tr>
+                    <td><strong>💵 Implantação</strong></td>
+                    <td><strong>10%</strong></td>
+                    <td>Sobre o valor total da implantação de cada cliente</td>
+                </tr>
+                <tr>
+                    <td><strong>🔄 Mensalidade</strong></td>
+                    <td><strong>5%</strong></td>
+                    <td>Por até 3 meses (ou 6 meses para parceiros estratégicos)</td>
+                </tr>
+                <tr class="destaque">
+                    <td><strong>🎯 Bônus por metas</strong></td>
+                    <td><strong>R$ 500 a R$ 1.000</strong></td>
+                    <td>Meta atingida: R$ 500 | Super meta: R$ 1.000</td>
+                </tr>
+            </table>
+
+            <div class="exemplo-card" style="margin-top: 40px;">
+                <h3 style="color: white;">📊 Exemplo Real de Ganho</h3>
+                <p>Venda de 3 clientes PACS (implantação média R$ 2.000 | mensalidade R$ 800)</p>
+                <div class="exemplo-valor">R$ 1.460</div>
+                <p style="font-size: 1.2rem;">💰 Comissão implantação: R$ 600 | 💰 Comissão mensalidade (3 meses): R$ 360 | 🎯 Bônus meta: R$ 500</p>
+                <p style="margin-top: 20px;"><strong>E ainda ganha nos meses seguintes se for parceiro estratégico!</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Responsabilidades -->
+    <section>
+        <div class="container">
+            <h2>Como <span>funciona na prática</span></h2>
+            
+            <div class="colunas-responsabilidades">
+                <div class="responsabilidades">
+                    <h3 style="color: #0a2b4e; margin-bottom: 20px;">🔹 O parceiro faz:</h3>
+                    <ul>
+                        <li>Indicar e prospectar clientes</li>
+                        <li>Apoiar reuniões iniciais</li>
+                        <li>Manter relacionamento local</li>
+                        <li>Ser nosso representante na região</li>
+                    </ul>
+                </div>
+                
+                <div class="responsabilidades">
+                    <h3 style="color: #0a2b4e; margin-bottom: 20px;">🔸 A AM2 faz:</h3>
+                    <ul>
+                        <li>Implantação completa</li>
+                        <li>Suporte técnico especializado</li>
+                        <li>Atendimento ao cliente</li>
+                        <li>Cobrança e contratos</li>
+                        <li>Treinamento e material comercial</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Evolução -->
+    <section style="background-color: #0a2b4e; color: white;">
+        <div class="container" style="text-align: center;">
+            <h2 style="color: white;">🚀 Evolução dentro do Programa</h2>
+            <div class="grid-3" style="margin-top: 40px;">
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
+                    <div style="font-size: 3rem;">🟢</div>
+                    <h3 style="color: white;">Parceiro Indicado</h3>
+                    <p>Início no programa, com benefícios base</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
+                    <div style="font-size: 3rem;">🔵</div>
+                    <h3 style="color: white;">Parceiro Ativo</h3>
+                    <p>Comissões estendidas e suporte prioritário</p>
+                </div>
+                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
+                    <div style="font-size: 3rem;">🟣</div>
+                    <h3 style="color: white;">Estratégico Regional</h3>
+                    <p>6 meses de comissão, bônus especiais e destaque</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Formulário de Contato -->
+    <section id="formulario">
+        <div class="container">
+            <h2>Pronto para <span>começar</span>?</h2>
+            <div class="form-contato">
+                <form action="https://formspree.io/f/seu-email-aqui" method="POST">
+                    <div class="form-group">
+                        <label>Nome completo *</label>
+                        <input type="text" name="nome" required>
+                    </div>
+                    <div class="form-group">
+                        <label>E-mail *</label>
+                        <input type="email" name="email" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Telefone / WhatsApp *</label>
+                        <input type="tel" name="telefone" required>
+                    </div>
+                    <div class="form-group">
+                        <label>Cidade / Estado</label>
+                        <input type="text" name="cidade">
+                    </div>
+                    <div class="form-group">
+                        <label>Perfil *</label>
+                        <select name="perfil" required>
+                            <option value="">Selecione...</option>
+                            <option value="TI">Profissional de TI</option>
+                            <option value="Consultor">Consultor de Clínicas</option>
+                            <option value="Empresa">Empresa da Área da Saúde</option>
+                            <option value="Vendedor">Vendedor com carteira de clientes</option>
+                            <option value="Outro">Outro</option>
+                        </select>
+                    </div>
+                    <button type="submit" class="btn" style="width: 100%;">QUERO SER PARCEIRO</button>
+                </form>
+                <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #666;">Após o cadastro, entraremos em contato para um treinamento rápido e exclusivo.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <h3 style="color: white; margin-bottom: 20px;">AM2 Soluções</h3>
+            <p style="margin-bottom: 10px;">Tecnologia que transforma clínicas e hospitais</p>
+            <p style="margin-bottom: 5px;"><strong>Alexandre Silva</strong></p>
+            <p style="margin-bottom: 5px;">📱 (11) 99999-9999</p>
+            <p style="margin-bottom: 5px;">📧 alexandre@am2solucoes.com.br</p>
+            <p style="margin-bottom: 5px;">🌐 www.am2solucoes.com.br/parceiros</p>
+            <div style="margin-top: 30px;">
+                <a href="#" style="margin: 0 10px;">Termos</a> | 
+                <a href="#" style="margin: 0 10px;">Privacidade</a> | 
+                <a href="#" style="margin: 0 10px;">Contato</a>
+            </div>
+            <p style="margin-top: 30px; font-size: 0.9rem;">© 2024 AM2 Soluções - Todos os direitos reservados</p>
+        </div>
+    </footer>
+</body>
+</html>
