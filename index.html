@@ -421,7 +421,7 @@
         </div>
     </section>
 
-    <!-- Jornada do Parceiro (SUA IDEIA) -->
+    <!-- Jornada do Parceiro -->
     <section style="background-color: white;">
         <div class="container">
             <h2>⚡ <span>Jornada de Crescimento</span> do Parceiro</h2>
@@ -442,7 +442,7 @@
                     <p style="font-size: 0.9rem; color: #666;">Perfeito para começar e testar a parceria.</p>
                 </div>
                 
-                <!-- Setinha (opcional) -->
+                <!-- Setinha -->
                 <div style="display: flex; align-items: center; font-size: 2rem; color: #00b8b0;">→</div>
                 
                 <!-- Card Fase 2 -->
@@ -501,31 +501,31 @@
         </div>
     </section>
 
-    <!-- Formulário de Contato -->
+    <!-- Formulário de Contato - COM WHATSAPP INTEGRADO -->
     <section id="formulario">
         <div class="container">
             <h2>Pronto para <span>começar</span>?</h2>
             <div class="form-contato">
-                <form action="https://formspree.io/f/seu-email-aqui" method="POST">
+                <form id="formParceiro" onsubmit="enviarWhatsApp(event)">
                     <div class="form-group">
                         <label>Nome completo *</label>
-                        <input type="text" name="nome" required>
+                        <input type="text" id="nome" name="nome" required>
                     </div>
                     <div class="form-group">
                         <label>E-mail *</label>
-                        <input type="email" name="email" required>
+                        <input type="email" id="email" name="email" required>
                     </div>
                     <div class="form-group">
                         <label>Telefone / WhatsApp *</label>
-                        <input type="tel" name="telefone" required>
+                        <input type="tel" id="telefone" name="telefone" required>
                     </div>
                     <div class="form-group">
                         <label>Cidade / Estado</label>
-                        <input type="text" name="cidade">
+                        <input type="text" id="cidade" name="cidade">
                     </div>
                     <div class="form-group">
                         <label>Perfil *</label>
-                        <select name="perfil" required>
+                        <select id="perfil" name="perfil" required>
                             <option value="">Selecione...</option>
                             <option value="TI">Profissional de TI</option>
                             <option value="Consultor">Consultor de Clínicas</option>
@@ -536,11 +536,11 @@
                     </div>
                     <div class="form-group">
                         <label>Mensagem (opcional)</label>
-                        <textarea name="mensagem" rows="3"></textarea>
+                        <textarea id="mensagem" name="mensagem" rows="3"></textarea>
                     </div>
-                    <button type="submit" class="btn" style="width: 100%;">QUERO SER PARCEIRO</button>
+                    <button type="submit" class="btn" style="width: 100%;">ENVIAR CADASTRO VIA WHATSAPP</button>
                 </form>
-                <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #666;">Após o cadastro, entraremos em contato para um treinamento rápido e exclusivo.</p>
+                <p style="text-align: center; margin-top: 20px; font-size: 0.9rem; color: #666;">Clique no botão e você será redirecionado para o WhatsApp com todos os dados preenchidos.</p>
             </div>
         </div>
     </section>
@@ -551,7 +551,7 @@
             <h3 style="color: white; margin-bottom: 20px;">AM2 Soluções</h3>
             <p style="margin-bottom: 10px;">Tecnologia que transforma clínicas e hospitais</p>
             <p style="margin-bottom: 5px;"><strong>Alexandre Silva</strong></p>
-            <p style="margin-bottom: 5px;">📱 (45) 9 9860-7211</p>
+            <p style="margin-bottom: 5px;">📱 <strong style="color: #00b8b0;">(45) 99860-7211</strong></p>
             <p style="margin-bottom: 5px;">📧 alexandre@am2solucoes.com.br</p>
             <p style="margin-bottom: 5px;">🌐 www.am2solucoes.com.br/parceiros</p>
             <div style="margin-top: 30px;">
@@ -562,5 +562,47 @@
             <p style="margin-top: 30px; font-size: 0.9rem;">© 2026 AM2 Soluções - Todos os direitos reservados</p>
         </div>
     </footer>
+
+    <script>
+        function enviarWhatsApp(event) {
+            event.preventDefault(); // Impede o envio tradicional do formulário
+            
+            // Pegar valores dos campos
+            const nome = document.getElementById('nome').value;
+            const email = document.getElementById('email').value;
+            const telefone = document.getElementById('telefone').value;
+            const cidade = document.getElementById('cidade').value;
+            const perfil = document.getElementById('perfil').value;
+            const mensagem = document.getElementById('mensagem').value;
+            
+            // Construir a mensagem para o WhatsApp
+            let textoWhatsApp = `*NOVO CADASTRO DE PARCEIRO - AM2 SOLUÇÕES*%0A%0A`;
+            textoWhatsApp += `👤 *Nome:* ${nome}%0A`;
+            textoWhatsApp += `📧 *E-mail:* ${email}%0A`;
+            textoWhatsApp += `📱 *Telefone:* ${telefone}%0A`;
+            
+            if (cidade) {
+                textoWhatsApp += `📍 *Cidade/Estado:* ${cidade}%0A`;
+            }
+            
+            textoWhatsApp += `💼 *Perfil:* ${perfil}%0A`;
+            
+            if (mensagem) {
+                textoWhatsApp += `💬 *Mensagem:* ${mensagem}%0A`;
+            }
+            
+            textoWhatsApp += `%0A---%0A`;
+            textoWhatsApp += `Enviado pelo site de parcerias AM2`;
+            
+            // Número do WhatsApp (formato internacional: 55 + DDD + número sem traços)
+            const numeroWhatsApp = '5545998607211';
+            
+            // Criar link do WhatsApp
+            const linkWhatsApp = `https://wa.me/${numeroWhatsApp}?text=${textoWhatsApp}`;
+            
+            // Redirecionar para o WhatsApp
+            window.open(linkWhatsApp, '_blank');
+        }
+    </script>
 </body>
 </html>
