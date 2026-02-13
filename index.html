@@ -65,6 +65,7 @@
         .btn-secondary {
             background-color: transparent;
             border: 2px solid white;
+            margin-left: 15px;
         }
 
         .btn-secondary:hover {
@@ -183,6 +184,7 @@
             padding: 40px;
             border-radius: 10px;
             text-align: center;
+            margin-top: 40px;
         }
 
         .exemplo-valor {
@@ -244,7 +246,7 @@
             color: #0a2b4e;
         }
 
-        .form-group input, .form-group select {
+        .form-group input, .form-group select, .form-group textarea {
             width: 100%;
             padding: 12px;
             border: 1px solid #d9e2ef;
@@ -271,6 +273,16 @@
                 font-size: 2rem;
             }
             
+            .hero .btn {
+                display: block;
+                margin: 10px auto;
+                width: 80%;
+            }
+            
+            .btn-secondary {
+                margin-left: 0;
+            }
+            
             .colunas-responsabilidades {
                 grid-template-columns: 1fr;
                 gap: 20px;
@@ -289,7 +301,7 @@
             <h1>Seja um Parceiro Regional AM2<br>e gere novas receitas com tecnologia para saúde</h1>
             <p>Ofereça PACS em Nuvem, Sistema de Laudos e WhatsApp Multiatendimento para seus clientes,<br>sem se preocupar com suporte técnico ou implantação.</p>
             <a href="#formulario" class="btn">QUERO SER PARCEIRO</a>
-            <a href="#solucoes" class="btn btn-secondary" style="margin-left: 15px;">CONHECER SOLUÇÕES</a>
+            <a href="#solucoes" class="btn btn-secondary">CONHECER SOLUÇÕES</a>
         </div>
     </div>
 
@@ -399,7 +411,7 @@
                 </tr>
             </table>
 
-            <div class="exemplo-card" style="margin-top: 40px;">
+            <div class="exemplo-card">
                 <h3 style="color: white;">📊 Exemplo Real de Ganho</h3>
                 <p>Venda de 3 clientes PACS (implantação média R$ 2.000 | mensalidade R$ 800)</p>
                 <div class="exemplo-valor">R$ 1.460</div>
@@ -409,8 +421,58 @@
         </div>
     </section>
 
+    <!-- Jornada do Parceiro (SUA IDEIA) -->
+    <section style="background-color: white;">
+        <div class="container">
+            <h2>⚡ <span>Jornada de Crescimento</span> do Parceiro</h2>
+            <p style="text-align: center; max-width: 700px; margin: 0 auto 40px; font-size: 1.2rem;">Um caminho claro, justo e baseado em resultados. Você começa testando e, se entregar, ganha mais benefícios.</p>
+            
+            <div style="display: flex; flex-wrap: wrap; gap: 20px; justify-content: center; margin-bottom: 40px;">
+                <!-- Card Fase 1 -->
+                <div style="flex: 1; min-width: 280px; background: #f4f7fc; border-radius: 10px; padding: 30px; border-top: 5px solid #00b8b0;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🟢</div>
+                    <h3 style="color: #0a2b4e;">Fase 1: Parceiro Ativo</h3>
+                    <p style="font-weight: bold; color: #0a2b4e;">A porta de entrada</p>
+                    <ul style="list-style: none; padding: 0; margin: 20px 0; text-align: left;">
+                        <li style="margin-bottom: 10px;">✅ Indique e apresente clientes</li>
+                        <li style="margin-bottom: 10px;">✅ 10% sobre implantações</li>
+                        <li style="margin-bottom: 10px;">✅ 5% das mensalidades (3 meses)</li>
+                        <li style="margin-bottom: 10px;">✅ Bônus por metas: R$500 a R$1000</li>
+                    </ul>
+                    <p style="font-size: 0.9rem; color: #666;">Perfeito para começar e testar a parceria.</p>
+                </div>
+                
+                <!-- Setinha (opcional) -->
+                <div style="display: flex; align-items: center; font-size: 2rem; color: #00b8b0;">→</div>
+                
+                <!-- Card Fase 2 -->
+                <div style="flex: 1; min-width: 280px; background: #0a2b4e; border-radius: 10px; padding: 30px; border-top: 5px solid #00b8b0;">
+                    <div style="font-size: 2rem; margin-bottom: 10px;">🟣</div>
+                    <h3 style="color: white;">Fase 2: Estratégico Regional</h3>
+                    <p style="font-weight: bold; color: #00b8b0;">Para quem já provou</p>
+                    <ul style="list-style: none; padding: 0; margin: 20px 0; text-align: left; color: white;">
+                        <li style="margin-bottom: 10px;">⭐ 5 a 8 clientes fechados</li>
+                        <li style="margin-bottom: 10px;">⭐ Mínimo 6 meses de parceria</li>
+                        <li style="margin-bottom: 10px;">⭐ Relacionamento validado</li>
+                        <li style="margin-bottom: 10px; color: #00b8b0; font-weight: bold;">🔓 Benefícios exclusivos:</li>
+                        <li style="margin-bottom: 10px;">✅ Comissão mensalidade por 6 meses</li>
+                        <li style="margin-bottom: 10px;">✅ Prioridade em leads da região</li>
+                        <li style="margin-bottom: 10px;">✅ Possível exclusividade (com meta)</li>
+                    </ul>
+                    <p style="font-size: 0.9rem; color: #ccc;">Status renovado anualmente mediante metas.</p>
+                </div>
+            </div>
+            
+            <!-- Nota importante -->
+            <div style="background: #fff3cd; border-left: 4px solid #ffc107; padding: 20px; border-radius: 5px;">
+                <p style="margin: 0; font-weight: bold;">📌 Transparência total:</p>
+                <p style="margin: 5px 0 0;">Começamos como parceiro ativo para que você conheça a AM2, e nós conheçamos você. Resultados consistentes abrem portas para benefícios estratégicos.</p>
+            </div>
+        </div>
+    </section>
+
     <!-- Responsabilidades -->
-    <section>
+    <section style="background-color: #e6f0fa;">
         <div class="container">
             <h2>Como <span>funciona na prática</span></h2>
             
@@ -434,30 +496,6 @@
                         <li>Cobrança e contratos</li>
                         <li>Treinamento e material comercial</li>
                     </ul>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Evolução -->
-    <section style="background-color: #0a2b4e; color: white;">
-        <div class="container" style="text-align: center;">
-            <h2 style="color: white;">🚀 Evolução dentro do Programa</h2>
-            <div class="grid-3" style="margin-top: 40px;">
-                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
-                    <div style="font-size: 3rem;">🟢</div>
-                    <h3 style="color: white;">Parceiro Indicado</h3>
-                    <p>Início no programa, com benefícios base</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
-                    <div style="font-size: 3rem;">🔵</div>
-                    <h3 style="color: white;">Parceiro Ativo</h3>
-                    <p>Comissões estendidas e suporte prioritário</p>
-                </div>
-                <div style="background: rgba(255,255,255,0.1); padding: 30px; border-radius: 10px;">
-                    <div style="font-size: 3rem;">🟣</div>
-                    <h3 style="color: white;">Estratégico Regional</h3>
-                    <p>6 meses de comissão, bônus especiais e destaque</p>
                 </div>
             </div>
         </div>
@@ -495,6 +533,10 @@
                             <option value="Vendedor">Vendedor com carteira de clientes</option>
                             <option value="Outro">Outro</option>
                         </select>
+                    </div>
+                    <div class="form-group">
+                        <label>Mensagem (opcional)</label>
+                        <textarea name="mensagem" rows="3"></textarea>
                     </div>
                     <button type="submit" class="btn" style="width: 100%;">QUERO SER PARCEIRO</button>
                 </form>
